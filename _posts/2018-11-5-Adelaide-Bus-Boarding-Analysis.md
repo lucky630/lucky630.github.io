@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Comprehensive Adelaide Bus Boarding Analysis
+comments: true
 ---
 
 In this Article i will showcase you how i have explored bus travelling habits of people in Adelaide city
