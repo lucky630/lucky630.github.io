@@ -9,4 +9,5 @@ In the Last,will create a predictive model which will predict the load of passen
 
 
 Link to the Complete [Kaggle Notebook](https://www.kaggle.com/rednivrug/comprehensive-bus-boarding-analysis).
-you can Like or Comment the Notebook for show your support.
+
+you can Like or Comment the Notebook to show your support.
