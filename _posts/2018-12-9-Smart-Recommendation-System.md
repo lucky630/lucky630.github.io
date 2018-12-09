@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Smart Recommendation System
+excerpt: Shop Smatter
+permalink: /Smart-Recommendation-System
+publish: true
 comments: true
 images:
   - url: /images/product_recomend.png
@@ -9,7 +12,8 @@ images:
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 <h2><span style="text-decoration: underline;"><strong>Introduction</strong></span></h2>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last week i went for my first 24 Hour's offline hackathon.
-This hackathon was organized by the company named Rakuten(who is also official sponsor of Barcelona Football team).
+This hackathon was organized by the company named Rakuten(who is also official sponsor of Barcelona Football team).</p>
+<p>
 The teams come for this hackathon were selected based upon there idea's which were submitted during Hackerearth or Techgig online hackathon.
 </p>
 
