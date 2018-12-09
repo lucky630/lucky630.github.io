@@ -30,6 +30,28 @@ in the final step we will recommend 10 matched products based upon transaction h
 
 So,the Input to our Application is Product Image or Text Query while output is the 10 Recommended Products based upon various attributes.
 
+### Dataset
+
+Deep learning model were trained on DeepFashion Category and Attribute Prediction Dataset.
+
+This is a very rich dataset having both bounding boxes and category label information for the images.
+
+This Dataset having 300k images which were categorized into 47 categories and those categories were further divided into 1000 different attributes.
+
+link to [Dataset](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
+.First we have created training,testing and validation sets.
+
+### Model Training
+
+We have used transfer learning to fine tuned the last 12 layers of Resnet50 model.
+This model having two branches.
+
+The First part is for image to category where loss was 'categorical_crossentropy' & accuracy were 'top_k_categorical_accuracy'.
+
+Second branch was for image to bounding boxes where loss & accuracy both calculated in 'Rmse'.
+
+Finally used the tfidfvectorizer & countvectorizer to do Text Similarity for getting the similar context products.
+
 Link to the Complete [Kaggle Notebook](https://www.kaggle.com/rednivrug/comprehensive-bus-boarding-analysis).
 
 Comment below if you have any query.
