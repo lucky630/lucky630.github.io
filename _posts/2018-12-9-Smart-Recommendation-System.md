@@ -26,7 +26,7 @@ our idea were to create a smart recommendation System which can combine with bot
 
 So, by combining Object Detection & Image segmentation with Hybrid Recommendation we can personalize the search result for each user.
 
-### Pipeline WorkFlow
+<h2><span style="text-decoration: underline;"><strong>Pipeline WorkFlow</strong></span></h2>
 
 ![an image alt text]({{ site.baseurl }}/images/product_recomend.png "Recommendation Pipeline")
 
@@ -39,7 +39,7 @@ in the final step we will recommend 10 matched products based upon transaction h
 
 So,the Input to our Application is Product Image or Text Query while output is the 10 Recommended Products based upon various attributes.
 
-### Dataset
+<h2><span style="text-decoration: underline;"><strong>Dataset</strong></span></h2>
 
 Deep learning model were trained on DeepFashion Category and Attribute Prediction Dataset.
 
@@ -50,7 +50,7 @@ This Dataset having 300k images which were categorized into 47 categories and th
 link to [Dataset](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html)
 .First we have created training,testing and validation sets.
 
-### Model Training
+<h2><span style="text-decoration: underline;"><strong>Model Training</strong></span></h2>
 
 We have used transfer learning to fine tuned the last 12 layers of Resnet50 model.
 This model having two branches.
@@ -60,6 +60,18 @@ The First part is for image to category where loss was 'categorical_crossentropy
 Second branch was for image to bounding boxes where loss & accuracy both calculated in 'Rmse'.
 
 Finally used the tfidfvectorizer & countvectorizer to do Text Similarity for getting the similar context products.
+
+<h2><span style="text-decoration: underline;"><strong>Tech Stack</strong></span></h2>
+
+we have designed two frontends for this application first one is a Android App which were part of the final submission and second one is a web based console.
+
+backend was running on a flask web server and models were trained on Google colab free Gpu servers.
+
+<h2><span style="text-decoration: underline;"><strong>Experience</strong></span></h2>
+
+Me and my friend done overnight train journey from chennai to bangalore to attend this hackathon.
+
+![an image alt text]({{ site.baseurl }}/images/smart_recommend/team.JPG "Team Member")
 
 Link to the Complete [Kaggle Notebook](https://www.kaggle.com/rednivrug/comprehensive-bus-boarding-analysis).
 
