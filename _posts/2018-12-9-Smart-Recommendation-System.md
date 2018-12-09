@@ -13,7 +13,7 @@ So let's start by introducing the idea.
 
 our idea were to create a smart recommendation System which can combine with both Image and Text Search.This implemented Image Search feature was a miniature version of the Amazon's newly implemented Product Image search feature.
 
-![an image alt text]({{ site.baseurl }}/images/2oj558.gif "Product Image Search")
+![an image alt text]({{ site.baseurl }}/images/2oje7l.gif "Product Image Search")
 
 So, by combining Object Detection & Image segmentation with Hybrid Recommendation we can personalize the search result for each user.
 
