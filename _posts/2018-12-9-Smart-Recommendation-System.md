@@ -6,7 +6,7 @@ permalink: /Smart-Recommendation-System
 publish: true
 comments: true
 images:
-  - url: /images/product_recomend.png
+  - url: /images/2oje7l.gif
 ---
 
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
