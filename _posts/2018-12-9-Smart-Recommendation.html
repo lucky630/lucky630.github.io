@@ -45,15 +45,15 @@ link to <a href = "http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html" target
 <li>First images would separated in training,testing and validation sets.then we have categorized the training set into following folder structure.</li>
 <p><span style="text-decoration: underline;">##Example Folder Structure After processing:</span></p>
 <span style="border: 3px solid gray;margin: 0;">
-<p>Train:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer</p>
+Train:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer
 Val:
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer
 Test:
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer
 </span>
 <li>Next,We have extracted the bounding box information from the annotation file and normalize the values of bounding box information by the shape of the related image.</li>
 <li>in the final step we have created the batches of images and labels to feed into our network.</li>
@@ -65,7 +65,7 @@ Test:
 
 <p>The First part is for image to category where loss was 'categorical_crossentropy' & accuracy were 'top_k_categorical_accuracy'.while Second part is for image to bounding boxes where loss & accuracy both calculated in 'Rmse'.After Augmented the images Finally we trained the network for 20 epochs and got near to 70% top-5 categorical accuracy.</p>
 
-Reference to <a href = "https://medium.com/deep-learning-turkey/deep-learning-lab-episode-4-deep-fashion-2df9e15a63e1" target="_blank">Model Structure and parameters</a>
+Reference to <a href = "https://medium.com/deep-learning-turkey/deep-learning-lab-episode-4-deep-fashion-2df9e15a63e1" target="_blank">Model Structure</a>
 
 <h2><span style="text-decoration: underline;"><strong>Tech Stack</strong></span></h2>
 
