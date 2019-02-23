@@ -1,0 +1,96 @@
+---
+layout: post
+title: Comment Scorer
+excerpt: Score Comments
+permalink: /Comment-Scorer
+publish: true
+comments: true
+images:
+  - url: /images/commentScorer/CommentScorerDiagram.png
+---
+
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+<h2><span style="text-decoration: underline;"><strong>Introduction</strong></span></h2>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ecommerce is a fastest growing bussiness in the world and it was estimated to get double in next five years.it was essential to recommend only useful products to users.Here come's our idea of Smart recommendation System which we have implemented during the 1 day hackathon.</p>
+
+<p>Smart recommendation in apps and websites is not an additional feature but it is a most essential feature which differentiates top industries from others. Most users take for granted that they will be suggested products that they like.Here Content-based filtering has been widely used to predict the interests of a user by collecting preference from there historical transactions. It is often combined with Collaborative filtering, especially for building Hybrid recommendation system. In this post, i will walk through building a clothes detection system which forms the basis of a robust recommender engine.</p>
+
+<p>This idea of smart recommendation System which combined both Image and Text Search to gave personalize recommendation is very close to what Amazon implemented in there Product Image search feature for their App.</p>
+
+<figure><img src="/images/2oje7l.gif" align = "middle"> <figcaption style = "font-size:15px;"></figcaption></figure>
+
+<p>So, by combining Object Detection with Hybrid Recommendation we can personalize the search result for each user.</p>
+
+<h2><span style="text-decoration: underline;"><strong>Pipeline WorkFlow</strong></span></h2>
+
+<figure><img src="/images/product_recomend.png" align = "middle"> <figcaption style = "font-size:15px;"></figcaption></figure>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So here User would capture an image of a product in real time and can search for required product in the E-commerce site either by Product Image or it can search with Query regarding what product they want.</p>
+
+<p>In the Backend we First Classify the broad category of product in the image whether it is a Shirt,jeans etc then map the image with available 1000 attributes.
+If it is a Query then we first preProcess the query then map the preprocessed query with available 1000 tags/attributes.in the final step we have recommend 10 matched products based upon transaction history of the user.</p>
+
+<p>So,the Input to our Application is Product Image or Text Query while output is the 10 Recommended Products based upon various attributes.</p>
+
+<h2><span style="text-decoration: underline;"><strong>Dataset</strong></span></h2>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have used DeepFashion Category and Attribute Prediction Dataset which is the largest subset of the Deep Fashion dataset.This subset having both bounding boxes and category label information for the images.
+Dataset having total 300k images which were categorized into 47 categories and those categories were further divided into 1000 different attributes.These images are ranging from well-posed shopping images to unstructured customer images.</p>
+
+link to <a href = "http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html" target="_blank">Deep Fashion Dataset</a>
+<h3>Steps to Preprocess the Dataset</h3>
+<ul>
+<li>First images would separated in training,testing and validation sets.then we have categorized the training set into following folder structure.</li>
+<p><span style="text-decoration: underline;">##Example Folder Structure After processing:</span></p>
+<span style="border: 3px solid gray;margin: 0;">
+Train:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer</p>
+Val:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer</p>
+Test:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blazer:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classic_Cuffed_Blazer</p>
+</span>
+<li>Next,We have extracted the bounding box information from the annotation file and normalize the values of bounding box information by the shape of the related image.</li>
+<li>in the final step we have created the batches of images and labels to feed into our network.</li>
+</ul>
+  
+<h2><span style="text-decoration: underline;"><strong>Model Training</strong></span></h2>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the Model building we have used ResNet50 model with pretrained weights of imagenet dataset.So we have only trained the last 12 layers of the model while freezing the rest.The whole model has branched into two parts.</p>
+
+<p>The First part is for image to category where loss was 'categorical_crossentropy' & accuracy were 'top_k_categorical_accuracy'.while Second part is for image to bounding boxes where loss & accuracy both calculated in 'Rmse'.After Augmented the images Finally we trained the network for 20 epochs and got near to 70% top-5 categorical accuracy.</p>
+
+Reference to <a href = "https://medium.com/deep-learning-turkey/deep-learning-lab-episode-4-deep-fashion-2df9e15a63e1" target="_blank">Model Structure</a>
+
+<h2><span style="text-decoration: underline;"><strong>Tech Stack</strong></span></h2>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp The Tech Stack used to develop the solution are:
+<ul>
+<li>FrontEnd - Android Application,Web interface</li>
+<li>Web Server - Flask</li>
+<li>Deep Learning Framework - Keras,Tensorflow</li>
+<li>NLP - word2vec,Cosine Similarity</li>
+<li>Gpu Server - Google Colab</li>
+</ul>
+</p>
+
+<a href="https://youtu.be/vjzcjCbeOJA" target="_blank"><img src="/images/smart_recommend/youtube_front.PNG" 
+alt="Youtube Video link" width="640" height="380" border="10" /></a>
+
+<p>we have designed two frontends for this application first one is a Android App which were part of the final submission and second one is a web based interface which you can see in the video.</p>
+
+<h2><span style="text-decoration: underline;"><strong>Experience</strong></span></h2>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Hackathon's are great way to learn and to try new idea's in very short period of time.This year i have participated in lot of online machine learning competition's but Last week was my first 24 Hour's offline hackathon.Offline hackathons are much different from online hackathon where you worked for whole day and have to implement your idea within short period of time.additionally,you also get opportunity to meet lot of new and similar minded people who are also working to develop something new and interesting under the same roof.</p>
+
+<p>This hackathon was organized by the company named Rakuten(who is also official sponsor of Barcelona Football team) in their Bangalore office.So,Me and my friend done overnight journey from chennai to bangalore to attend this hackathon.other two friends of mine have joined from bangalore itself.so we have the team of four members.The teams which come for this hackathon were selected based upon there idea's which were submitted during Hackerearth and Techgig online hackathon.</p>
+
+<p>Unfortunetely,we were not able to win the competition but it was quite a experience.now i'm eagerly waiting for the next hackathon.</p>
+
+<figure><img src="/images/smart_recommend/team.JPG" align = "middle"> <figcaption style = "font-size:15px;">Team</figcaption></figure>
