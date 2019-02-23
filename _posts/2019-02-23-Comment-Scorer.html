@@ -11,21 +11,41 @@ images:
 
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-<h2><span style="text-decoration: underline;"><strong>Introduction</strong></span></h2>
+<h2><span style="text-decoration: underline;"><strong>Problem Statement</strong></span></h2>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ecommerce is a fastest growing bussiness in the world and it was estimated to get double in next five years.it was essential to recommend only useful products to users.Here come's our idea of Smart recommendation System which we have implemented during the 1 day hackathon.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ponder is a platform for sharing your thoughts, or promoting some personal stuff and everything. Not only that it is also a very good place to check to keep yourself with what is happening around the world. But it has a very strict posting policy, and getting credits for good comments are really. You’re someone who has just started to use Ponder as a new user, you want to predict whether your comment is going to receive a good score or not.</p>
 
-<p>Smart recommendation in apps and websites is not an additional feature but it is a most essential feature which differentiates top industries from others. Most users take for granted that they will be suggested products that they like.Here Content-based filtering has been widely used to predict the interests of a user by collecting preference from there historical transactions. It is often combined with Collaborative filtering, especially for building Hybrid recommendation system. In this post, i will walk through building a clothes detection system which forms the basis of a robust recommender engine.</p>
-
-<p>This idea of smart recommendation System which combined both Image and Text Search to gave personalize recommendation is very close to what Amazon implemented in there Product Image search feature for their App.</p>
-
-<figure><img src="/images/2oje7l.gif" align = "middle"> <figcaption style = "font-size:15px;"></figcaption></figure>
-
-<p>So, by combining Object Detection with Hybrid Recommendation we can personalize the search result for each user.</p>
+<h2><span style="text-decoration: underline;"><strong>Data Description</strong></span></h2>
+<table>
+  <tr>
+    <th>Column Label</th>
+    <th>Column Description</th>
+  </tr>
+  <tr>
+    <td>UID</td>
+    <td>Unique Id</td>
+  </tr>
+  <tr>
+    <td>Comment</td>
+    <td>Reply to a parent comment</td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>Comment data</td>
+  </tr>
+  <tr>
+    <td>parent_commnet</td>
+    <td>The parent comment to which sarcastic comments are made</td>
+  </tr>
+  <tr>
+    <td>score</td>
+    <td>Score on the parent_comment</td>
+  </tr>
+</table>
 
 <h2><span style="text-decoration: underline;"><strong>Pipeline WorkFlow</strong></span></h2>
 
-<figure><img src="/images/product_recomend.png" align = "middle"> <figcaption style = "font-size:15px;"></figcaption></figure>
+<figure><img src="/images/commentScorer/CommentScorerDiagram.png" align = "middle"> <figcaption style = "font-size:15px;"></figcaption></figure>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So here User would capture an image of a product in real time and can search for required product in the E-commerce site either by Product Image or it can search with Query regarding what product they want.</p>
 
